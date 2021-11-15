@@ -76,19 +76,8 @@ MIDDLEWARE = [
 # this is from dj_database_url and is optional but more succinct
 
 # clear out defaults
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'myproject',
-        'USER': 'myprojectuser',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
 }
-
-
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 ROOT_URLCONF = 'blog_deploy.urls'
@@ -193,7 +182,3 @@ ADMINS = (
         os.environ.get('ADMIN_EMAIL')
     ),
 )
-
-STATIC_URL = '/static/'
-import os
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
