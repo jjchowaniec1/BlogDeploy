@@ -34,7 +34,7 @@ DEBUG = False
 if settings.DEBUG:
     ALLOWED_HOSTS = ['*']
 else:
-    ALLOWED_HOSTS = ['surfcastthesound.xyz', 'www.surfcastthesound.xyz.net', 'localhost', '127.0.0.1']
+    ALLOWED_HOSTS = ['surfcastthesound.xyz', 'www.surfcastthesound.xyz', 'localhost', '127.0.0.1']
 
 SITE_ID = 1
 
