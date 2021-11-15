@@ -34,7 +34,7 @@ DEBUG = False
 if settings.DEBUG:
     ALLOWED_HOSTS = ['*']
 else:
-    ALLOWED_HOSTS = ['surfcastthesound.xyz', 'www.surfcastthesound.xyz', 'localhost', '127.0.0.1']
+    ALLOWED_HOSTS = ['surfcastthesound.xyz', 'www.surfcastthesound.xyz','40.76.225.199', 'localhost' ]
 
 SITE_ID = 1
 
@@ -76,7 +76,19 @@ MIDDLEWARE = [
 # this is from dj_database_url and is optional but more succinct
 
 # clear out defaults
-DATABASES = {}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'myproject',
+        'USER': 'myprojectuser',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+
+
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 ROOT_URLCONF = 'blog_deploy.urls'
@@ -181,3 +193,7 @@ ADMINS = (
         os.environ.get('ADMIN_EMAIL')
     ),
 )
+
+STATIC_URL = '/static/'
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
