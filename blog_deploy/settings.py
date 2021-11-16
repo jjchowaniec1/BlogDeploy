@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = False
+DEBUG = True
 
 if settings.DEBUG:
     ALLOWED_HOSTS = ['*']
@@ -76,9 +76,20 @@ MIDDLEWARE = [
 # this is from dj_database_url and is optional but more succinct
 
 # clear out defaults
+#DATABASES = {
+#}
 DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'myproject',
+        'USER': 'myprojectuser',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
 }
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 ROOT_URLCONF = 'blog_deploy.urls'
 
