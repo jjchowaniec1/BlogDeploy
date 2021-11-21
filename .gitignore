@@ -92,6 +92,9 @@ ENV/
 .spyderproject
 .spyproject
 
+# Secondary Blog Folder
+/BlogDeploy
+
 # Rope project settings
 .ropeproject
 
