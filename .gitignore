@@ -92,8 +92,9 @@ ENV/
 .spyderproject
 .spyproject
 
-# Secondary Blog Folder
+# Extra Folders
 /BlogDeploy
+/startbootstrap-clean-blog-gh-pages
 
 # Rope project settings
 .ropeproject
