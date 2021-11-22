@@ -4,10 +4,12 @@ from django.core.paginator import Paginator, EmptyPage,\
 from django.db.models import Count
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse
+from django.contrib.auth import authenticate, login
 
 from taggit.models import Tag
 
-from . forms import CommentForm, EmailPostForm, SearchForm
+from . forms import CommentForm, EmailPostForm, SearchForm, LoginForm
 from . models import Comment, Post
 
 # Create your views here.
