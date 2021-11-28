@@ -7,7 +7,7 @@
 
 /* Flexbox Sticky Footer: https://startbootstrap.com/snippets/sticky-footer-flexbox */
 /* Sticky Footer Classes */
-/* html,
+html,
 body {
     height: 100%;
 }
@@ -22,7 +22,7 @@ body {
 
 #sticky-footer {
   flex-shrink: none;
-} */
+}
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
