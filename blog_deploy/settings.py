@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'payment.apps.PaymentConfig',    
     'shop.apps.ShopConfig',
     'account.apps.AccountConfig',
+    'social_django',
+
 ]
 
 
