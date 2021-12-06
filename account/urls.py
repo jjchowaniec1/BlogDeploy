@@ -16,9 +16,12 @@ urlpatterns = [
     # path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     # path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     
-    path('', views.dashboard, name='dashboard'),
+    path('', views.dashboard, name='dashboard'),    
     path('', include('django.contrib.auth.urls')),
+    path('edit/', views.edit, name='edit'),    
     path('register/', views.register, name='register'),
-    path('edit/', views.edit, name='edit'),
+    path('users/', views.user_list, name='user_list'),
+    path('users/<username>/', views.user_detail, name='user_detail'),
+    path('users/follow/', views.user_follow, name='user_follow'),
 ]
 

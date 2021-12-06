@@ -9,7 +9,7 @@ from django.contrib.auth import authenticate, login
 
 from taggit.models import Tag
 
-from . forms import CommentForm, EmailPostForm, SearchForm, LoginForm
+from . forms import CommentForm, EmailPostForm, SearchForm, LoginForm, ContactPostForm
 from . models import Comment, Post
 
 # Create your views here.
@@ -95,7 +95,7 @@ def post_share(request, post_id):
                 f"Read {post.title} at {post_url}\n\n"
                 f"{cd['name']}\'s comments: {cd['comments']}"
             )
-            send_mail(subject, message, 'info@mail.buffteks.net', [cd['to']])
+            send_mail(subject, message, 'surfcastthesound@gmail.com', [cd['to']])
             sent = True
     else:
         form = EmailPostForm()
@@ -136,4 +136,33 @@ def about(request):
 
 
 def contact(request):
-    return render(request, 'blog/contact.html')
+   # return render(request, 'blog/contact.html')
+   #def post_share(request, post_id):
+    # Retrieve post by id
+    #post = get_object_or_404(Post, id=post_id, status='published')
+    sent = False
+    if request.method == 'POST':
+        # Form was submitted
+        form = ContactPostForm(request.POST)
+        if form.is_valid():
+            # Form fields passed validation
+            cd = form.cleaned_data
+            #post_url = request.build_absolute_uri(post.get_absolute_url())
+            subject = (
+                f"Support Request" 
+            )
+            message = (
+                f"{cd['comments']}"
+            )
+            email = (
+                f"{cd['email']}"
+            )
+            to = (
+                f"{cd['to']}"
+            )
+            send_mail(subject, message, email, to)
+            sent = True
+    else:
+        form = ContactPostForm()
+    return render(request, 'blog/contact.html', {'form': form,
+                                                    'sent': sent})

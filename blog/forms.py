@@ -25,5 +25,10 @@ class SearchForm(forms.Form):
     query = forms.CharField()
 
 
-
+class ContactPostForm(forms.Form):
+    name = forms.CharField(max_length=25)
+    email = forms.EmailField()
+    to = forms.EmailField(widget=forms.HiddenInput({'placeholder': 'surfcastthesound@gmail.com'}),required=False )
+    comments = forms.CharField(required=False,
+                               widget=forms.Textarea)
 
