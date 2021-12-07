@@ -7,7 +7,7 @@
 {% block content %}
     <div class="row">
         <div class="col-8">
-            <h1>Checkout</h1>
+            <!-- <h1>Checkout</h1>
             <form method="post" class="order-form">
                 {% comment %} using django crispy forms for this filter
                 https://django-crispy-forms.readthedocs.io/en/latest/index.html {% endcomment %}
@@ -21,9 +21,15 @@
                            value="Place order">
                 </p>
                 {% csrf_token %}
+            </form> -->
+            <h1>Donate</h1>
+            <form method="post" class="order-form">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <input type="submit" value="Donate">
             </form>
         </div>
-        <div class="col-4">
+        <!-- <div class="col-4">
             <h3>Your order</h3>
             <ul>
                 {% for item in cart %}
@@ -34,6 +40,6 @@
                 {% endfor %}
             </ul>
             <p>Total: ${{ cart.get_total_price|intcomma }}</p>
-        </div>        
+        </div>         -->
     </div>
 {% endblock %}

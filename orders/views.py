@@ -22,13 +22,13 @@ def order_create(request):
         form = OrderCreateForm(request.POST)
         if form.is_valid():
             order = form.save()
-            for item in cart:
-                OrderItem.objects.create(order=order,
-                                        product=item['product'],
-                                        price=item['price'],
-                                        quantity=item['quantity'])
-            # clear the cart
-            cart.clear()
+            # for item in cart:
+            #     OrderItem.objects.create(order=order,
+            #                             product=item['product'],
+            #                             price=item['price'],
+            #                             quantity=item['quantity'])
+            # # clear the cart
+            # cart.clear()
             # send the mail - no need for celery or RabbitMQ
             order_created(order.id)
             # set the order in the session

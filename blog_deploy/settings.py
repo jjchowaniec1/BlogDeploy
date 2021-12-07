@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = False
+DEBUG = True
 
 if settings.DEBUG:
     ALLOWED_HOSTS = ['*']
@@ -192,7 +192,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # WHITENOISE_USE_FINDERS = True
 
 # email stuff - using mailgun
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
