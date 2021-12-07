@@ -11,14 +11,14 @@
                     <!-- Page Content -->
                 {% if request.user.is_authenticated %}
                 <!--<ul class="menu"> -->
-                <li class="nav-item";{% if section == "dashboard" %}class="selected"{% endif %}>
-                    <a class="nav-link" href="{% url "dashboard" %}">My dashboard</a>
-                </li>
                 <li class="nav-item";{{% if section == "images" %}class="selected"{% endif %}>
-                    <a class="nav-link" href="#">Images</a>
+                    <a class="nav-link" href="#">Blog Portal</a>
+                </li>
+                <li class="nav-item";{% if section == "dashboard" %}class="selected"{% endif %}>
+                    <a class="nav-link" href="{% url "dashboard" %}">User Dashboard</a>
                 </li>
                 <li class="nav-item";{{% if section == "people" %}class="selected"{% endif %}>
-                    <a class="nav-link" href="#">People</a>
+                    <a class="nav-link" href="{% url "user_list" %}">People</a>
                 </li>
                 <!-- </ul> -->
                 {% endif %}

@@ -30,8 +30,9 @@ urlpatterns = [
     path('payment/', include('payment.urls', namespace='payment')),
     path('orders/', include('orders.urls', namespace='orders')),    
     path('shop/', include('shop.urls', namespace='shop')),
-    path('account/', include('account.urls')),
+    
     path('', include('blog.urls', namespace='blog')),
+    path('account/', include('account.urls')),
     path('social-auth/', include('social_django.urls', namespace='social')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap')

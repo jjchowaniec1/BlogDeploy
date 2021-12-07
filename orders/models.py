@@ -13,7 +13,6 @@ class Order(models.Model):
     city = models.CharField(max_length=100)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    donation = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     paid = models.BooleanField(default=False)
     braintree_id = models.CharField(max_length=150, blank=True)    
     
@@ -24,8 +23,7 @@ class Order(models.Model):
         return f'Order {self.id}'
     
     def get_total_cost(self):
-        return self.donation 
-        #sum(item.get_cost() for item in self.items.all())
+        return sum(item.get_cost() for item in self.items.all())
 
 
 class OrderItem(models.Model):

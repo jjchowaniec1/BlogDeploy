@@ -10,11 +10,11 @@
       <span class="logo">Surfcast the Sound</span>
       {% if request.user.is_authenticated %}
         <ul class="menu">
-          <li {% if section == "dashboard" %}class="selected"{% endif %}>
-            <a href="{% url "dashboard" %}">My dashboard</a>
-          </li>
           <li {% if section == "posts" %}class="selected"{% endif %}>
-            <a href="{% url "blog:post_list" %}">Images</a>
+            <a href="{% url "blog:post_list" %}">Blog Portal</a>
+          </li>
+          <li {% if section == "dashboard" %}class="selected"{% endif %}>
+            <a href="{% url "dashboard" %}">User Dashboard</a>
           </li>
           <li {% if section == "people" %}class="selected"{% endif %}>
             <a href="{% url "user_list" %}">People</a>

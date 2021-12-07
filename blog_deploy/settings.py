@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = False
+DEBUG = True
 
 if settings.DEBUG:
     ALLOWED_HOSTS = ['*']
@@ -29,6 +29,7 @@ SITE_ID = 1
 
 # Application definition
 INSTALLED_APPS = [
+    'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,9 +47,9 @@ INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',    
     'shop.apps.ShopConfig',
-    'account.apps.AccountConfig',
     'social_django',
     'actions.apps.ActionsConfig',
+    'easy_thumbnails',
 
 ]
 
