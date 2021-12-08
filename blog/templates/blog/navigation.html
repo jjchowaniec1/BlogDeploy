@@ -11,9 +11,6 @@
                     <!-- Page Content -->
                 {% if request.user.is_authenticated %}
                 <!--<ul class="menu"> -->
-                <li class="nav-item";{{% if section == "images" %}class="selected"{% endif %}>
-                    <a class="nav-link" href="#">Blog Portal</a>
-                </li>
                 <li class="nav-item";{% if section == "dashboard" %}class="selected"{% endif %}>
                     <a class="nav-link" href="{% url "dashboard" %}">User Dashboard</a>
                 </li>
@@ -47,7 +44,7 @@
                     {% else %}
                     <a class="nav-link" href="{% url "login" %}">Log-in</a>
                     {% endif %}
-                    </span>
+                </span>
                 </li>
             </ul>
         </div>
