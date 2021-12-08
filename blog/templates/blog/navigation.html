@@ -42,7 +42,7 @@
                 <li class="nav-item"></li>
                 <span class="user">
                     {% if request.user.is_authenticated %}
-                    Hello {{ request.user.first_name }},
+                    <a class="nav-link"href="{% url "edit" %}">Hello {{ request.user.first_name }},</a>
                     <a class="nav-link" href="{% url "logout" %}">Logout</a>
                     {% else %}
                     <a class="nav-link" href="{% url "login" %}">Log-in</a>

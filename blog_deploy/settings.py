@@ -192,8 +192,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # Also, we can have Whitenoise look for static files in each app rather than running collectstatic
 # WHITENOISE_USE_FINDERS = True
 
-# email stuff - using mailgun
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# email stuff
 
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
